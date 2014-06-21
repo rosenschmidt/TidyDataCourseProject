@@ -1,5 +1,11 @@
 ################################################################################
 
+# run_analysis.R
+
+# Coursera June 2014 Getting and Cleaning Data
+
+# Fred Schmidt, Columbia Missouri USA fred@rosenschmidt.org
+
 # unzip the directory, if necessary.
 #dataDir <- "./UCI HAR Dataset"
 #if(file.exists(dataDir))
@@ -70,6 +76,7 @@ tidyDataFrame1 <- theData1[,
                       grepl("mean",colnames(theData1),ignore.case = TRUE) |
                       grepl("std",colnames(theData1),ignore.case = TRUE)   ]
 
+
 # the below does not work for some reason
 # tidyDataFrame1 <- cbind(as.integer(theData1$Activity),tidyDataFrame1)
 
@@ -104,6 +111,13 @@ tidyDataFrame2 <- merge(x = activity_labels,
                         all.y = TRUE)
 
 rm(activity_labels)
+
+################################################################################
+
+# output the two tidy files
+
+write.table(tidyDataFrame1,file="tidyDataFrame1.txt",row.names=FALSE,sep="\t")
+write.table(tidyDataFrame2,file="tidyDataFrame2.txt",row.names=FALSE,sep="\t")
 
 ################################################################################
 
