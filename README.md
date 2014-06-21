@@ -32,3 +32,29 @@ into this file to make the R script more readable.
 
 The CODEBOOK.md contains some description of how I derived the
 columns and rows of the two tidy data sets.
+
+## HOW THE TIDY DATA SETS WERE CONSTRUCTED
+
+1. Glue (cbind) y_test.txt and subject_test.txt onto X_test.txt, and
+   y_train.txt and subject_train.txt onto X_train.txt.
+   These are actually the subject numbers, which we need.
+
+2. Glue (rbind) the result of 1 onto each other (combine the
+   test and train data).
+
+3. Massage the 561 column names as described in my CODEBOOK.md
+   and to some extent in the comments in my run_analysis.R,
+   and tack them on top of the big matrix.
+
+4. Squash out the columns that aren't means or standard deviations.
+
+This results in tidy data frame #1. Then,
+
+5. split and take the means of what's left, making a new dataset,
+   with 180 rows consisting of 30 subjects by six factors.
+   So we have 180 sets of means of means and means of std devs from
+   the tidy data set #1
+
+This results in tidy data frame #2.
+   
+Curiously, we had little to do in the way of cleaning up MISSING data....

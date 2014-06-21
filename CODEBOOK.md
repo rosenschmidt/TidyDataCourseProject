@@ -30,3 +30,6 @@ particularly care about.
 
 Each ROW of the second tidy data set corresponds to the mean of the
 means and std deviations across the appropriate factors.
+
+If you DO care what the columns are, the best source is features_info.txt.
+
