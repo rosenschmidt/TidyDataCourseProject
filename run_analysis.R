@@ -12,6 +12,7 @@
 #   file.remove(dataDir,recurseive=TRUE)
 # for some reason all, attempts at testing existence fail
 # so do attempts to remove; they fail silently.
+
 dataFile <- "getdata-projectfiles-UCI HAR Dataset.zip"
 unzip(dataFile)
 
